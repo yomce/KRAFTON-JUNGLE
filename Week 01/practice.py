@@ -77,7 +77,7 @@ import sys
 #     print(f'{N} * {i} = {N*i}')
 
 
-# #10950
+# #10950 A+B
 # num_iter = int(input())
 
 # for test_case in range(num_iter):
@@ -90,14 +90,16 @@ import sys
 # for i in range(1,N+1):
 #     print('*'*i)
 
+
 # # 15596 정수 N개의 합
 # def hap(a: list):
 #     total = 0
 #     for i in a:
 #         total += i
-#     return(total)
+#     return total
 
 # print(hap([1, 2, 3, 4, 5]))
+
 
 # #11654 아스키코드
 # n = ord(input())
@@ -111,5 +113,78 @@ import sys
 # print(max_value)  
 # print(max_index)
 
+
 # #2908 상수
-# a, b = int(input().split())
+# a, b = input().split() 
+
+# a_reversed = int(a[::-1])  
+# b_reversed = int(b[::-1])  
+
+# print(max(a_reversed, b_reversed))
+
+
+# #4344 평균은 넘겠지
+# num = int(input())
+# for i in range(num):
+#     data = list(map(int, input().split()))
+#     N = data[0]
+#     scores = data[1: ]
+    
+#     avg = sum(scores)/N
+#     avg_over = []
+#     for i in scores:
+#         if i > avg:
+#             avg_over.append(i)
+#     percent = len(avg_over)/N*100
+    
+#     print(f"{percent:.3f}%")
+    
+
+# #11152 단어의 개수
+# a = list(input().split())
+# print(len(a))
+
+
+#8958 OX퀴즈
+
+
+#2577 숫자의 개수
+a = int(input())
+b = int(input())
+c = int(input())
+num = a*b*c
+digits = list(map(int, str(num))) 
+for i in range(10):
+    print(digits.count(i))
+
+
+#2675 문자열 반복
+
+
+# #2869 달팽이는 올라가고싶다
+# A, B, V = map(int, input().split())
+# climb = (V-A)//(A-B)
+# climbing = (V-B)%(A-B)
+# if climbing == 0:
+#     days = climb +1
+# else:
+#     days = climb +2
+# print(days)
+
+# import math
+
+# A, B, V = map(int, input().split())
+
+# days = (V - B) / (A - B)  # 나누기 연산 수행
+# print(math.ceil(days))  # 올림하여 최소 날짜 계산
+# A, B, V = map(int, input().split())
+
+# W = V - A
+# D = A - B
+
+# print(((W+D-1)//D)+1)
+
+
+#1978 소수찾기
+N = int(input())
+
