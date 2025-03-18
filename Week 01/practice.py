@@ -148,14 +148,14 @@ import sys
 #8958 OX퀴즈
 
 
-#2577 숫자의 개수
-a = int(input())
-b = int(input())
-c = int(input())
-num = a*b*c
-digits = list(map(int, str(num))) 
-for i in range(10):
-    print(digits.count(i))
+# #2577 숫자의 개수
+# a = int(input())
+# b = int(input())
+# c = int(input())
+# num = a*b*c
+# digits = list(map(int, str(num))) 
+# for i in range(10):
+#     print(digits.count(i))
 
 
 #2675 문자열 반복
@@ -185,6 +185,127 @@ for i in range(10):
 # print(((W+D-1)//D)+1)
 
 
-#1978 소수찾기
-N = int(input())
+# #1978 소수찾기
+# def find_prime_num(n:int = 1000):
 
+#     prime_num_list = [2]
+#     for num in range(3, n+1):
+        
+#         for prime_number in prime_num_list:
+#             if num % prime_number == 0:
+#                 break
+            
+#             if prime_num_list[-1] == prime_number:
+#                 prime_num_list.append(num)
+                
+#     return prime_num_list
+
+# num_test_case = int(input())
+
+# test_list = list(map(int, input().split()))
+
+# num_prime = 0
+# list_all_prime_num = find_prime_num(n = 1000)
+
+# for test_case in test_list:
+#     if test_case in list_all_prime_num:
+#         num_prime += 1
+        
+# print(num_prime)
+
+
+# #1065 한수
+# N = int(input())
+
+# if N == 1000:
+#     N = 999
+    
+# if N <= 99:
+#    results = N
+   
+# else:
+#     results = 99
+    
+#     for i in range(100,N+1):
+#         a, b, c = map(int,str(i))
+#         d = b-a  # d는 공차
+#         if c-b == d:
+#             results +=1
+#         else:
+#             continue
+        
+# print(results)
+
+
+# # 9020 골드바흐의 추측
+# def find_prime_num(n:int = 10000): #소수찾기 프로그램
+
+#     prime_num_list = [2]
+#     for num in range(3, n+1):
+        
+#         for prime_number in prime_num_list:
+#             if num % prime_number == 0:
+#                 break
+            
+#             if prime_num_list[-1] == prime_number:
+#                 prime_num_list.append(num)
+                
+#     return prime_num_list
+
+# num_test = int(input()) #인풋에 3을 넣는다면
+# test_case =[]
+
+# for test in range(num_test): #for문이 3번 돈다는 뜻?
+#     input_num = int(input()) #인풋에 3개숫자 드가는데 첫번째 for문에 들어가는 숫자가 8이라면
+#     test_case.append(input_num) #빈 테스트 케이스 리스트에 추가한다는 뜻
+    
+# list_all_prime_num = find_prime_num(n=10000)
+
+# for test_num in test_case: #지금 test_case안에 8이 들어가 있는데, 8번을 돈다는 뜻이야 아님 test_case[0]을 의미해서 1번 돈다는 뜻이야?
+    
+#     middle_num = test_num//2
+    
+#     while True:
+#         if middle_num in list_all_prime_num:
+#             left_num = middle_num
+#             break
+#         else:
+#             middle_num -= 1
+            
+#     left_num_index = list_all_prime_num.index(middle_num)
+    
+#     while True:
+#         left_num = list_all_prime_num[left_num_index]
+#         right_num = test_num - left_num
+        
+#         if right_num in list_all_prime_num:
+#             break
+        
+#         else:
+#             left_num_index -= 1
+            
+#     left_num, right_num
+    
+#     print(f"{left_num} {right_num}")
+
+
+#2628 종이자르기
+ 
+
+
+# #10872 팩토리얼
+# N = int(input())  
+# result = 1
+# for i in range(1,N+1):
+#   result *= i
+    
+# print(result)
+
+def factorial(n: int) -> int:
+    if n > 0:
+        return n*factorial(n-1)
+    else:
+        return 1
+
+n = int(input())
+print(factorial(n))
