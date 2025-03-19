@@ -1,10 +1,10 @@
 import sys
 
-# #2557
+'''2557'''
 # print("hello world!")
 
 
-# # 10869
+'''10869'''
 # a, b = input().split()
 # a = int(a)
 # b = int(b)
@@ -17,14 +17,14 @@ import sys
 # print(m, n, l, p, q, sep="\n")
 
 
-# # 2558
+'''2558'''
 # a = int(input())
 # b = int(input())
 # c = a+b
 # print(c)
 
 
-# # 2588 세 자리수x세 자리수 곱셈
+'''2588 세 자리수x세 자리수 곱셈'''
 # a = list(input())
 # b = list(input())
 
@@ -38,7 +38,7 @@ import sys
 # # for문으로 한번짜보기
 
 
-# #9498 시험 성적
+'''9498 시험 성적'''
 # score = int(input())
 
 # if 90 <= score <= 100:
@@ -53,7 +53,7 @@ import sys
 #     print('F')
 
 
-# #2753 윤년
+'''2753 윤년'''
 # year = int(input())
 # if (year%4 == 0 and year%100 != 0) or (year%400 == 0):
 #     print(1)
@@ -61,7 +61,7 @@ import sys
 #     print(0)
 
 
-# #1085 직사각형에서 탈출
+'''1085 직사각형에서 탈출'''
 # x, y, w, h = map(int, input().split())
 # a = [x, y, w-x, h-y]
 # mini = a[0]
@@ -71,13 +71,13 @@ import sys
 # print(mini)
 
 
-# #2739 구구단
+'''2739 구구단'''
 # N = int(input())
 # for i in range(1,10):
 #     print(f'{N} * {i} = {N*i}')
 
 
-# #10950 A+B
+'''10950 A+B'''
 # num_iter = int(input())
 
 # for test_case in range(num_iter):
@@ -85,13 +85,13 @@ import sys
 #     print(a+b)
 
 
-# #2438 별 찍기
+'''2438 별 찍기'''
 # N = int(input())
 # for i in range(1,N+1):
 #     print('*'*i)
 
 
-# # 15596 정수 N개의 합
+'''15596 정수 N개의 합'''
 # def hap(a: list):
 #     total = 0
 #     for i in a:
@@ -101,12 +101,12 @@ import sys
 # print(hap([1, 2, 3, 4, 5]))
 
 
-# #11654 아스키코드
+'''11654 아스키코드'''
 # n = ord(input())
 # print(n)
 
 
-# #2562 최댓값
+'''2562 최댓값'''
 # nine = [int(input()) for _ in range(9)]
 # max_value = max(nine)
 # max_index = nine.index(max_value) + 1
@@ -114,7 +114,7 @@ import sys
 # print(max_index)
 
 
-# #2908 상수
+'''2908 상수'''
 # a, b = input().split() 
 
 # a_reversed = int(a[::-1])  
@@ -123,7 +123,7 @@ import sys
 # print(max(a_reversed, b_reversed))
 
 
-# #4344 평균은 넘겠지
+'''4344 평균은 넘겠지'''
 # num = int(input())
 # for i in range(num):
 #     data = list(map(int, input().split()))
@@ -140,15 +140,15 @@ import sys
 #     print(f"{percent:.3f}%")
     
 
-# #11152 단어의 개수
+'''11152 단어의 개수'''
 # a = list(input().split())
 # print(len(a))
 
 
-#8958 OX퀴즈
+'''8958 OX퀴즈'''
 
 
-# #2577 숫자의 개수
+'''2577 숫자의 개수'''
 # a = int(input())
 # b = int(input())
 # c = int(input())
@@ -158,10 +158,10 @@ import sys
 #     print(digits.count(i))
 
 
-#2675 문자열 반복
+'''2675 문자열 반복'''
 
 
-# #2869 달팽이는 올라가고싶다
+'''2869 달팽이는 올라가고싶다'''
 # A, B, V = map(int, input().split())
 # climb = (V-A)//(A-B)
 # climbing = (V-B)%(A-B)
@@ -185,7 +185,7 @@ import sys
 # print(((W+D-1)//D)+1)
 
 
-# #1978 소수찾기
+'''1978 소수찾기'''
 # def find_prime_num(n:int = 1000):
 
 #     prime_num_list = [2]
@@ -214,7 +214,7 @@ import sys
 # print(num_prime)
 
 
-# #1065 한수
+'''1065 한수'''
 # N = int(input())
 
 # if N == 1000:
@@ -237,7 +237,7 @@ import sys
 # print(results)
 
 
-# # 9020 골드바흐의 추측
+'''9020 골드바흐의 추측'''
 # def find_prime_num(n:int = 10000): #소수찾기 프로그램
 
 #     prime_num_list = [2]
@@ -255,13 +255,13 @@ import sys
 # num_test = int(input()) #인풋에 3을 넣는다면
 # test_case =[]
 
-# for test in range(num_test): #for문이 3번 돈다는 뜻?
+# for test in range(num_test): #for문이 3번 돈다는 뜻
 #     input_num = int(input()) #인풋에 3개숫자 드가는데 첫번째 for문에 들어가는 숫자가 8이라면
 #     test_case.append(input_num) #빈 테스트 케이스 리스트에 추가한다는 뜻
     
 # list_all_prime_num = find_prime_num(n=10000)
 
-# for test_num in test_case: #지금 test_case안에 8이 들어가 있는데, 8번을 돈다는 뜻이야 아님 test_case[0]을 의미해서 1번 돈다는 뜻이야?
+# for test_num in test_case: #지금 test_case안에 8이 들어가 있는데, test_case[0]을 의미해서 1번 돈다는 뜻
     
 #     middle_num = test_num//2
     
@@ -289,11 +289,11 @@ import sys
 #     print(f"{left_num} {right_num}")
 
 
-#2628 종이자르기
+'''2628 종이자르기'''
  
 
 
-# #10872 팩토리얼
+'''10872 팩토리얼'''
 # N = int(input())  
 # result = 1
 # for i in range(1,N+1):
@@ -301,6 +301,7 @@ import sys
     
 # # print(result)
 
+#재귀
 # def factorial(n: int) -> int:
 #     if n > 0:
 #         return n*factorial(n-1)
@@ -310,7 +311,7 @@ import sys
 # n = int(input())
 # print(factorial(n))
 
-# # 정렬하기
+'''2750 수 정렬하기'''
 # num_test_case = int(input())
 
 # test_case = []
@@ -323,70 +324,71 @@ import sys
 #     print(result)
 
 
-# 1181 단어 정렬하기
-alphabet_to_int_dict = {
-    'a': 1,
-    'b': 2,
-    'c': 3,
-    'd': 4,
-    'e': 5,
-    'f': 6,
-    'g': 7,
-    'h': 8,
-    'i': 9,
-    'j': 10,
-    'k': 11,
-    'l': 12,
-    'm': 13,
-    'n': 14,
-    'o': 15,
-    'p': 16,
-    'q': 17,
-    'r': 18,
-    's': 19,
-    't': 20,
-    'u': 21,
-    'v': 22,
-    'w': 23,
-    'x': 24,
-    'y': 25,
-    'z': 26
-}
+'''1181 단어 정렬하기'''
+# alphabet_to_int_dict = {
+#     'a': 1,
+#     'b': 2,
+#     'c': 3,
+#     'd': 4,
+#     'e': 5,
+#     'f': 6,
+#     'g': 7,
+#     'h': 8,
+#     'i': 9,
+#     'j': 10,
+#     'k': 11,
+#     'l': 12,
+#     'm': 13,
+#     'n': 14,
+#     'o': 15,
+#     'p': 16,
+#     'q': 17,
+#     'r': 18,
+#     's': 19,
+#     't': 20,
+#     'u': 21,
+#     'v': 22,
+#     'w': 23,
+#     'x': 24,
+#     'y': 25,
+#     'z': 26
+# }
 
-int_to_alphabet_dict = {v: k for k, v in alphabet_to_int_dict.items()}
+# int_to_alphabet_dict = {v: k for k, v in alphabet_to_int_dict.items()}
 
-num_test_case = int(input())
-list_inputs_set = set()
+# num_test_case = int(input())
+# list_inputs_set = set()
 
-for _ in range(num_test_case):
-    now_input = input()
-    now_input_decoded = 0
-    for decimal, decode in enumerate(reversed(now_input)):
-        now_input_decoded = now_input_decoded + alphabet_to_int_dict[decode] * 100**(decimal)
-    list_inputs_set.add(now_input_decoded)
+# for _ in range(num_test_case):
+#     now_input = input()
+#     now_input_decoded = 0
+#     for decimal, decode in enumerate(reversed(now_input)):
+#         now_input_decoded = now_input_decoded + alphabet_to_int_dict[decode] * 100**(decimal)
+#     list_inputs_set.add(now_input_decoded)
 
-list_inputs = list(list_inputs_set)
-list_inputs.sort()
+# list_inputs = list(list_inputs_set)
+# list_inputs.sort()
 
-for input_num in list_inputs:
-    now_str = ""
-    stred_now_int = str(input_num)
-    if len(stred_now_int) % 2 ==1:
-        stred_now_int = "0" + stred_now_int
+# for input_num in list_inputs:
+#     now_str = ""
+#     stred_now_int = str(input_num)
+#     if len(stred_now_int) % 2 ==1:
+#         stred_now_int = "0" + stred_now_int
 
-    for i in range(len(stred_now_int) // 2):
-        now_str += int_to_alphabet_dict[int(stred_now_int[2*i:2*i+2])]
+#     for i in range(len(stred_now_int) // 2):
+#         now_str += int_to_alphabet_dict[int(stred_now_int[2*i:2*i+2])]
             
-    print(now_str)
+#     print(now_str)
 
+# #간단한방법
+# n = int(input())
 
-n = int(input())
+# words = [str(input()) for i in range(n)]
 
-words = [str(input()) for i in range(n)]
+# words = list(set(words))
+# words.sort()
+# words.sort(key=len)
 
-words = list(set(words))
-words.sort()
-words.sort(key=len)
+# for i in words:
+#     print(i)
 
-for i in words:
-    print(i)
