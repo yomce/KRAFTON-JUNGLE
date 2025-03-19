@@ -293,22 +293,23 @@ import sys
  
 
 '''1914 하노이 탑'''
-def move(n:int, start:int, goal:int):
-    middle = 6-start-goal
-    if num == 1:
-        print(start, goal)
-        return
+# def move(n:int, start:int, goal:int):
+#     middle = 6-start-goal
+#     if num == 1:
+#         print(start, goal)
+#         return
     
-    move(n-1, start, middle)    
-    print(start, goal)
-    move(n-1, middle, goal)
+#     move(n-1, start, middle)    
+#     print(start, goal)
+#     move(n-1, middle, goal)
         
-n = int(input())
-print(2**num - 1)
-if n <= 20 :
-    move(n, 1, 3)
+# n = int(input())
+# print(2**num - 1)
+# if n <= 20 :
+#     move(n, 1, 3)
     
-    
+'''안녕하세요sd'''a
+
 '''10872 팩토리얼'''
 # N = int(input())  
 # result = 1
