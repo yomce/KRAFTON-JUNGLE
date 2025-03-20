@@ -292,23 +292,23 @@ import sys
 '''2628 종이자르기'''
  
 
-'''1914 하노이 탑'''
+'''1914 하노이 탑asd'''
 # def move(n:int, start:int, goal:int):
 #     middle = 6-start-goal
-#     if num == 1:
+#     if n == 1:
 #         print(start, goal)
 #         return
     
-#     move(n-1, start, middle)    
-#     print(start, goal)
-#     move(n-1, middle, goal)
+#     move(n-1, start, middle)    # 작은 원판들을 보조 기둥으로 이동
+#     print(start, goal)          # 이동 기록 저장
+#     move(n-1, middle, goal)     # 작은 원판들을 목표 기둥으로 이동
         
-# n = int(input())
-# print(2**num - 1)
+# n = int(input())  
+# print(2**n - 1) 
 # if n <= 20 :
 #     move(n, 1, 3)
     
-'''안녕하세요sd'''a
+
 
 '''10872 팩토리얼'''
 # N = int(input())  
@@ -435,3 +435,23 @@ import sys
 
 
 '''10819 차이를 최대로'''
+
+from itertools import permutations
+
+#(1) 순열만들기
+n = int(input())
+arr = list(map(int, input().split()))
+p = list(permutations(arr,n))
+
+result_max = 0
+
+# (2) 반복문으로 튜플을 꺼내 각 순열마다 차이의 합(s)을 구하고, 최대값을 answer에 저장한다
+for i in p:
+    s = 0                       #각 순열의 합을 담음
+    for j in range(n-1):
+        s += abs(i[j]-i[j+1])
+        
+ # 모든 경우 원소들끼리의 차이의 절댓값의 합을 max함수를 이용하여 갱신
+    result_max = max(result_max, s)
+
+print(result_max)
