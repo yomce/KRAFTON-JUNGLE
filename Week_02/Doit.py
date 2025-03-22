@@ -64,7 +64,7 @@ x = [None]*num      # num개인 배열 생성
 for i in range(num):
     x[i] = map(int, input().split())
     
-ky = int(input())s
+ky = int(input())
 idx = seq_search(x, ky)
 
 if idx == -1:
