@@ -27,8 +27,8 @@
 적어도 M미터의 나무를 집에 가져가기 위해서 절단기에 설정할 수 있는 높이의 최댓값을 출력한다.
 '''
 
-import sys
-input = sys.stdin.readline
+# import sys
+# input = sys.stdin.readline
 
 # N, M = map(int, input().split())
 # trees = list(map(int, input().split()))
@@ -56,33 +56,198 @@ input = sys.stdin.readline
 
 # print(max_result)
 
+# ########################################################
 
-N, M = map(int, input().split())
-trees = list(map(int, input().split()))
-'''trees.sort()''' # 안해도됨
+# import sys
+# input = sys.stdin.readline
 
-def get_cut_sum(trees, h):
-    total = 0
-    for tree in trees:
-        if tree > h:
-            total += (tree - h)
-    return total
+# N, M = map(int, input().split())
+# trees = list(map(int, input().split()))
+# '''trees.sort()''' # 안해도됨
 
-def binary_search(trees, target):
-    left = 0
-    right = max(trees)
-    result = 0
+# def get_cut_sum(trees, h):
+#     total = 0
+#     for tree in trees:
+#         if tree > h:
+#             total += (tree - h)
+#     return total
 
-    while left <= right:
-        mid = (left + right) // 2
-        total = get_cut_sum(trees, mid)
+# def binary_search(trees, target):
+#     left = 0
+#     right = max(trees)
+#     result = 0
 
-        if total >= target:
-            result = mid  # 조건 만족 → H 더 높여도 되는지 탐색
-            left = mid + 1
-        else:
-            right = mid - 1
+#     while left <= right:
+#         mid = (left + right) // 2
+#         total = get_cut_sum(trees, mid)
 
-    return result
+#         if total >= target:
+#             result = mid  # 조건 만족 → H 더 높여도 되는지 탐색
+#             left = mid + 1
+#         else:
+#             right = mid - 1
 
-print(binary_search(trees, M))
+#     return result
+
+# print(binary_search(trees, M))
+
+
+'''
+2110 공유기 설치
+입력
+첫째 줄에 집의 개수 N (2 ≤ N ≤ 200,000)과 공유기의 개수 C (2 ≤ C ≤ N)이 하나 이상의 빈 칸을 사이에 두고 주어진다. 둘째 줄부터 N개의 줄에는 집의 좌표를 나타내는 xi (0 ≤ xi ≤ 1,000,000,000)가 한 줄에 하나씩 주어진다.
+
+출력
+첫째 줄에 가장 인접한 두 공유기 사이의 최대 거리를 출력한다.
+'''
+
+# import sys
+# input = sys.stdin.readline
+
+# n, c = map(int, input().split())
+
+# houses = []
+# for _ in range(n):
+#     houses.append(int(input()))
+
+# houses.sort()
+
+# def install_wifi(distance):
+#     count = 1  # 첫 번째 집엔 설치
+#     last_installed = houses[0]
+
+#     for i in range(1, n):
+#         if houses[i] - last_installed >= distance:
+#             count += 1
+#             last_installed = houses[i]
+
+#     return count
+
+# # 이진 탐색
+# left = 1
+# right = houses[-1] - houses[0]
+# answer = 0
+
+# while left <= right:
+#     mid = (left + right) // 2
+#     if install_wifi(mid) >= c:
+#         answer = mid
+#         left = mid + 1  # 더 넓은 거리 도전
+#     else:
+#         right = mid - 1
+
+# print(answer)
+
+
+'''10828 스택'''
+import sys
+
+stack = []
+n = int(sys.stdin.readline())
+
+for _ in range(n):
+    cmd = sys.stdin.readline().strip().split()
+
+    if cmd[0] == 'push':
+        stack.append(int(cmd[1]))
+    elif cmd[0] == 'pop':
+        print(stack.pop() if stack else -1)
+    elif cmd[0] == 'size':
+        print(len(stack))
+    elif cmd[0] == 'empty':
+        print(0 if stack else 1)
+    elif cmd[0] == 'top':
+        print(stack[-1] if stack else -1)
+
+
+'''10773 제로'''
+import sys
+
+k = int(sys.stdin.readline())
+stack = []
+
+for _ in range(k):
+    num = int(sys.stdin.readline())
+    if num == 0:
+        if stack:
+            stack.pop()
+    else:
+        stack.append(num)
+
+print(sum(stack))
+
+
+'''9012 괄호'''
+import sys
+
+n = int(sys.stdin.readline())
+
+for _ in range(n):
+    line = sys.stdin.readline().strip()
+    stack = []
+    is_vps = True
+
+    for char in line:
+        if char == '(':
+            stack.append(char)
+        elif char == ')':
+            if stack:
+                stack.pop()
+            else:
+                is_vps = False
+                break
+
+    if stack:
+        is_vps = False
+
+    print("YES" if is_vps else "NO")
+
+
+
+'''17608 막대기'''
+# no stack
+import sys
+
+n = int(sys.stdin.readline())
+for _ in range(n):
+    sticks.append(int(sys.stdin.readline()))    
+#sticks = [int(sys.stdin.readline()) for _ in range(n)]
+
+count = 0
+max_height = 0
+
+# 오른쪽에서 보니까 뒤에서부터 확인
+for height in reversed(sticks):
+    if height > max_height:
+        count += 1
+        max_height = height
+
+print(count)
+
+# stack
+import sys
+
+n = int(sys.stdin.readline())
+stack = []
+
+# 막대기 입력 받기 (순서대로 쌓음)
+for _ in range(n):
+    height = int(sys.stdin.readline())
+    stack.append(height)
+
+visible_count = 0
+max_height = 0
+
+# 스택의 맨 위(오른쪽 끝)부터 확인
+while stack:
+    height = stack.pop()
+    if height > max_height:
+        visible_count += 1
+        max_height = height
+
+print(visible_count)
+
+
+
+'''18258 큐2'''
+

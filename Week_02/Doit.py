@@ -49,26 +49,115 @@ from typing import Any, Sequence
     
     
 #for문으로 작성
-def seq_search2(a: Sequence, key: Any) -> int:
-    i = 0
-    for i in range(len(a)):
-        if a[i] == key:
-            return i
+# def seq_search2(a: Sequence, key: Any) -> int:
+#     i = 0
+#     for i in range(len(a)):
+#         if a[i] == key:
+#             return i
     
-    return -1
+#     return -1
         
-num = int(input())
+# num = int(input())
 
-x = [None]*num      # num개인 배열 생성
+# x = [None]*num      # num개인 배열 생성
 
-for i in range(num):
-    x[i] = map(int, input().split())
+# for i in range(num):
+#     x[i] = map(int, input().split())
     
-ky = int(input())
-idx = seq_search(x, ky)
+# ky = int(input())
+# idx = seq_search(x, ky)
 
-if idx == -1:
-    print('값이 존재하지 않습니다.')
+# if idx == -1:
+#     print('값이 존재하지 않습니다.')
     
-else:
-    print(f'x[{idx}]에 있습니다.')
+# else:
+#     print(f'x[{idx}]에 있습니다.')
+
+'''3-3 이진 검색 실습'''
+#이진 검색 알고리즘과 과정까지 출력하기
+# import sys
+# input = sys.stdin.readline
+
+# n = int(input())
+# list_a = list(map(int, input().split()))
+# list_a.sort()
+
+# from typing import Any, Sequence
+# def bin_search(a: Sequence, key: Any) -> int:
+#     left = 0
+#     right = len(a) -1
+ 
+#     while True:
+#         mid = (left+right)//2      #중앙 원소의 인덱스
+#         if a[mid] == key:
+#             return mid
+#         elif a[mid] < key:
+#             left = mid + 1
+#         else:
+#             right = mid - 1
+        
+#         if left > right:
+#             break
+        
+#     return -1
+
+# print(bin_search(list_a, n))
+
+
+'''4-1 스택'''
+#고정 길이 스택 클래스 FixedStack 구현하기
+
+from typing import Any
+
+class FixedStack:
+    """고정 길이 스택 클래스"""
+    
+    class Empty(Exception):
+        '''비어있는 FixedStack에 팝 또는 피크할 때 내보내는 예외 처리'''
+        pass
+    
+    class Full(Exception):
+        '''가득 찬 FixedStack에 푸시할 때 내보내는 예외 처리'''
+        pass
+        
+    def __init__(self, capacity: int =256) -> None:
+        '''스택 초기화'''
+        self.stk = [None] * capacity
+        self.capacity = capacity
+        self.ptr = 0
+        
+    def __len__(self) -> int:
+        '''스택에 쌓여 있는 데이터 개수를 반환'''
+        return self.ptr
+    
+    def is_empty(self) -> bool:
+        '''스택에 쌓여있는 데이터 개수를 반환'''
+        return self.ptr <= 0
+    
+    def is_full(self) -> bool:
+        '''스택이 가득 차 있는지 판단'''
+        return self.ptr >= self.capacity
+    
+    def push(self, value:Any) -> None:
+        '''스택에 value를 푸시(데이터를 넣음)'''
+        if self.is_full():
+            raise FixedStack.Full
+        self.stk[self.ptr] = value
+        self.ptr += 1
+        
+    def pop(self) -> Any:
+        '''스택에서 데이터를 팝(꼭대기 데이터를 꺼냄)'''
+        if self.is_empty():
+            raise FixedStack.Empty
+        self.ptr -= 1
+        return self.stk[self.ptr]
+    
+    def peek(self) -> Any:
+        '''스택에서 데이터를 피크(꼭대기 데이터를 들여다봄)'''
+        if self.is_empty:
+            raise FixedStack.Empty
+        return self.stk[self.ptr -1]
+    
+    def clear(self) -> None:
+        '''스택을 비움(모든 데이터를 삭제)'''
+        self.ptr = 0
