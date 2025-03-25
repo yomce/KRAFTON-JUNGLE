@@ -249,5 +249,50 @@ print(visible_count)
 
 
 
-'''18258 큐2'''
+'''2493 탑'''
+import sys
 
+n = int(sys.stdin.readline())
+heights = list(map(int, sys.stdin.readline().split()))
+stack = []
+result = [0] * n  # 인덱스 0-based
+
+for i in range(n):
+    # 현재 탑보다 낮은 탑은 모두 제거
+    while stack and heights[stack[-1]] < heights[i]:
+        stack.pop()
+
+    # 남아있는 탑이 있으면 신호 수신 가능
+    if stack:
+        result[i] = stack[-1] + 1  # +1: 1-based 인덱스 출력용
+
+    # 현재 탑을 스택에 넣음
+    stack.append(i)
+
+print(' '.join(map(str, result)))
+
+
+
+'''18258 큐2'''
+import sys
+from collections import deque
+
+input = sys.stdin.readline
+queue = deque()
+n = int(input())
+
+for _ in range(n):
+    cmd = input().strip().split()
+
+    if cmd[0] == 'push':
+        queue.append(int(cmd[1]))
+    elif cmd[0] == 'pop':
+        print(queue.popleft() if queue else -1)
+    elif cmd[0] == 'size':
+        print(len(queue))
+    elif cmd[0] == 'empty':
+        print(0 if queue else 1)
+    elif cmd[0] == 'front':
+        print(queue[0] if queue else -1)
+    elif cmd[0] == 'back':
+        print(queue[-1] if queue else -1)
