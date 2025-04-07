@@ -1,0 +1,5 @@
+---
+triple:          'arm64-apple-darwin'
+binary-path:     "/Users/yomce/Desktop/정글/KRAFTON-JUNGLE/Week_04/practice"
+relocations:     []
+...
