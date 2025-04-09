@@ -17,11 +17,11 @@ import sys
 
 n = int(sys.stdin.readline())
 
-arr = [0]*1000001
-arr[1] = 1
+arr = [0]*1000001       #앞서 계산된 결과를 저장하기 위한 dp테이블 초기화
+arr[1] = 1      
 arr[2] = 2
 
-for i in range(3, n+1):
+for i in range(3, n+1):     #피보나치 함수 반복문으로 구현(바텀업 다이나믹 프로그래밍)
     arr[i] = (arr[i-1] + arr[i-2])%15746
     
 
